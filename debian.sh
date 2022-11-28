@@ -3,7 +3,7 @@
 # install basic requirements
 echo apt updating and installing basic tools...
 apt update
-apt install --no-install-recommends -y git curl netcat
+apt install --no-install-recommends -y git clang netcat
 
 # install neovim 0.8.1
 echo install neovim v0.8.1...
