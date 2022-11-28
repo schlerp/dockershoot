@@ -2,12 +2,17 @@
 
 # install basic requirements
 echo apt updating and installing basic tools...
-apt update
-apt install --no-install-recommends -y git clang netcat unzip ripgrep
+{
+  apt update
+  apt install --no-install-recommends -y git clang netcat unzip ripgrep
+} &> /dev/null
 
 # install neovim 0.8.1
 echo install neovim v0.8.1...
-curl -L -O https://github.com/neovim/neovim/releases/download/v0.8.1/nvim-linux64.deb
+{
+  curl --output-dir /tmp/ -L -O https://github.com/neovim/neovim/releases/download/v0.8.1/nvim-linux64.deb
+  apt install -y /tmp/nvim-linux64.deb
+} &> /dev/null
 
 # install nvchad neovim config
 echo adding NVChad neovim config...
